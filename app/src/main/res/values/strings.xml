@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PSWD_GEN</string>
+    <string name="alpha">Number of Alphabets</string>
+    <string name="digits">Number of digits</string>
+    <string name="special">Number of Special Symbols</string>
+    <string name="generate">Generate Button</string>
+    <string name="result">Result</string>
+</resources>

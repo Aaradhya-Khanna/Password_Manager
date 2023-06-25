@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+    <Button
+        android:id="@+id/show_pass"
+        android:layout_width="328dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="4dp"
+        android:text="Show password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/gen_pass"
+        android:layout_width="332dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:text="Generate password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_pass" />
+
+    <Button
+        android:id="@+id/store"
+        android:layout_width="332dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:text="Store custom password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gen_pass" />
+</androidx.constraintlayout.widget.ConstraintLayout>

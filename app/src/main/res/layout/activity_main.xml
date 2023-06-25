@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+    <EditText
+        android:id="@+id/alpha"
+        android:layout_width="300dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:hint="Number of alphabets"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/digits"
+        android:layout_width="300dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="44dp"
+        android:hint="Number of digits"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alpha" />
+
+    <EditText
+        android:id="@+id/special"
+        android:layout_width="300dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="44dp"
+        android:hint="Number of special symbols"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/digits" />
+
+
+    <ImageView
+        android:id="@+id/alp"
+        android:layout_width="44dp"
+        android:layout_height="45dp"
+
+        app:layout_constraintEnd_toStartOf="@+id/alpha"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/download"
+        tools:layout_editor_absoluteY="32dp"
+        tools:src="@drawable/download" />
+
+    <ImageView
+        android:id="@+id/dig"
+        android:layout_width="44dp"
+        android:layout_height="46dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toStartOf="@+id/digits"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alp"
+        app:srcCompat="@drawable/images"
+        tools:src="@drawable/images" />
+
+    <ImageView
+        android:id="@+id/sps"
+        android:layout_width="44dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/special"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dig"
+        app:srcCompat="@drawable/images__1_"
+        tools:src="@drawable/images__1_" />
+
+    <Button
+        android:id="@+id/generate"
+        android:layout_width="111dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="40dp"
+        android:hint="Generate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/special" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="207dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generate" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
