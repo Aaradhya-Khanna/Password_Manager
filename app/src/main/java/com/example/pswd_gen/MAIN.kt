@@ -25,7 +25,7 @@ class MAIN :AppCompatActivity()
         store.setOnClickListener()
         {
             val intent= Intent(this, MainActivity2::class.java)
-
+            startActivity(intent)
         }
         show=findViewById(R.id.show_pass)
         show.setOnClickListener()

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
 
 
-        database = FirebaseDatabase.getInstance().getReference("Passwords" )
+        database = FirebaseDatabase.getInstance().getReference("Passwords Generated" )
         mybutton= findViewById(R.id.generate)
         mybutton.setOnClickListener()
         {
@@ -69,7 +70,9 @@ class MainActivity : AppCompatActivity()
         }
         result=findViewById(R.id.result)
         result.setText(password)
-        val PSWDS=passwords(result.toString(),site.toString(),"generated")
-
+        val PSWDS=passwords(result.toString(),st,"generated")
+        database.child(st).setValue(PSWDS).addOnSuccessListener {
+            Toast.makeText(this,"Successfully Saved", Toast.LENGTH_SHORT).show()
+        }
     }
 }

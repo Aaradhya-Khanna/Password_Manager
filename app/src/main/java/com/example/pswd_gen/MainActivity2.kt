@@ -1,20 +1,19 @@
 package com.example.pswd_gen
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.input.key.Key.Companion.G
-
-import java.lang.StringBuilder
-
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 class MainActivity2:AppCompatActivity()
 {
     private lateinit var site:EditText
     private lateinit var pass:EditText
     private lateinit var store:Button
+    private lateinit var db: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -24,16 +23,17 @@ class MainActivity2:AppCompatActivity()
         pass =findViewById(R.id.password)
         val a=site.getText().toString()
         val b=pass.getText().toString()
+        db = FirebaseDatabase.getInstance().getReference("Passwords Stored" )
         store.setOnClickListener()
         {
-            storethepass(a,b)
+            val PSWDS=passwords(b,a,"Stored")
+            db.child(a).setValue(PSWDS).addOnSuccessListener {
+                Toast.makeText(this,"Successfully Saved",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
 
-private fun storethepass(a:String,b:String)
-{
 
-}
 
 
