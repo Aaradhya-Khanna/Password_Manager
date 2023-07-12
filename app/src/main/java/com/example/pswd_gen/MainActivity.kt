@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity()
         setContentView(R.layout.activity_main)
 
 
-        database = FirebaseDatabase.getInstance().getReference("Passwords Generated" )
+        database = FirebaseDatabase.getInstance().getReference("Passwords" )
         mybutton= findViewById(R.id.generate)
         mybutton.setOnClickListener()
         {
@@ -70,9 +70,9 @@ class MainActivity : AppCompatActivity()
         }
         result=findViewById(R.id.result)
         result.setText(password)
-        val PSWDS=passwords(result.toString(),st,"generated")
+        val PSWDS=passwords(password.toString(),st,"Generated")
         database.child(st).setValue(PSWDS).addOnSuccessListener {
-            Toast.makeText(this,"Successfully Saved", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Generated and successfully Saved", Toast.LENGTH_SHORT).show()
         }
     }
 }

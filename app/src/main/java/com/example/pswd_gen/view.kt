@@ -12,7 +12,8 @@ import com.google.firebase.database.ValueEventListener
 
 class view:AppCompatActivity()
 {
-    private lateinit var databaseReference: DatabaseReference
+    private lateinit var databaseReference1: DatabaseReference
+    private lateinit var databaseReference2: DatabaseReference
     private lateinit var recycler : RecyclerView
     private var data=ArrayList<passwords>()
     override fun onCreate(savedInstanceState: Bundle?)
@@ -28,8 +29,8 @@ class view:AppCompatActivity()
 
     private fun getuserData()
     {
-        databaseReference = FirebaseDatabase.getInstance().getReference("Passwords Generated")
-        databaseReference.addValueEventListener(object:ValueEventListener{
+        databaseReference1 = FirebaseDatabase.getInstance().getReference("Passwords")
+        databaseReference1.addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists())
                 {
@@ -44,10 +45,8 @@ class view:AppCompatActivity()
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                TODO("Not yet implemented")
             }
-
         })
-
     }
 }

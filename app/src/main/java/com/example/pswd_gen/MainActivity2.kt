@@ -21,13 +21,15 @@ class MainActivity2:AppCompatActivity()
         store=findViewById(R.id.store)
         site=findViewById(R.id.Site)
         pass =findViewById(R.id.password)
-        val a=site.getText().toString()
-        val b=pass.getText().toString()
-        db = FirebaseDatabase.getInstance().getReference("Passwords Stored" )
+        val a=site.getText()
+        val b=pass.getText()
+        db = FirebaseDatabase.getInstance().getReference("Passwords" )
         store.setOnClickListener()
         {
-            val PSWDS=passwords(b,a,"Stored")
-            db.child(a).setValue(PSWDS).addOnSuccessListener {
+            val a=site.getText()
+            val b=pass.getText()
+            val pswds=passwords(b.toString(),a.toString(),"Stored")
+            db.child(a.toString()).setValue(pswds).addOnSuccessListener {
                 Toast.makeText(this,"Successfully Saved",Toast.LENGTH_SHORT).show()
             }
         }

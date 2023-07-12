@@ -7,9 +7,10 @@ import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import androidx.recyclerview.widget.RecyclerView
 
 class Adapter(private val passwordList : ArrayList<passwords> ) : RecyclerView.Adapter<Adapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
     {
-        val itemView=LayoutInflater.from(parent.context).inflate(R.layout.recycler,parent,false)
+        val itemView=LayoutInflater.from(parent.context).inflate(R.layout.cardview,parent,false)
         return ViewHolder(itemView)
     }
 
@@ -24,7 +25,7 @@ class Adapter(private val passwordList : ArrayList<passwords> ) : RecyclerView.A
         return passwordList.size
     }
     class ViewHolder(itemView : View): RecyclerView.ViewHolder(itemView){
-        val site: TextView = itemView.findViewById(R.id.textView)
+        val site:TextView = itemView.findViewById(R.id.textView)
         val pass:TextView = itemView.findViewById(R.id.textView2)
         val type:TextView = itemView.findViewById(R.id.textView3)
 
