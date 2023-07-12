@@ -5,6 +5,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import java.lang.StringBuilder
 
 
@@ -15,11 +17,16 @@ class MainActivity : AppCompatActivity()
     private lateinit var digits:EditText
     private lateinit var specials:EditText
     private lateinit var result:TextView
+    private lateinit var site:EditText
+    private lateinit var database: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        database = FirebaseDatabase.getInstance().getReference("Passwords" )
         mybutton= findViewById(R.id.generate)
         mybutton.setOnClickListener()
         {
@@ -32,9 +39,11 @@ class MainActivity : AppCompatActivity()
         alphas = findViewById(R.id.alpha)
         digits = findViewById(R.id.digits)
         specials = findViewById(R.id.special)
+        site=findViewById(R.id.Site)
         val a = alphas.getText().toString()
         val d = digits.getText().toString()
         val s = specials.getText().toString()
+        val st=site.getText().toString()
         val num1=a.toInt()
         val num2=d.toInt()
         val num3=s.toInt()
@@ -60,6 +69,7 @@ class MainActivity : AppCompatActivity()
         }
         result=findViewById(R.id.result)
         result.setText(password)
+        val PSWDS=passwords(result.toString(),site.toString(),"generated")
 
     }
 }

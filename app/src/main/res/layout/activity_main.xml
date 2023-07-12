@@ -40,6 +40,16 @@
         app:layout_constraintTop_toBottomOf="@+id/digits" />
 
 
+    <EditText
+        android:id="@+id/Site"
+        android:layout_width="300dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:hint="Site name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/special" />
+
     <ImageView
         android:id="@+id/alp"
         android:layout_width="44dp"
@@ -48,9 +58,9 @@
         app:layout_constraintEnd_toStartOf="@+id/alpha"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/download"
+        app:srcCompat="@drawable/aplhabet"
         tools:layout_editor_absoluteY="32dp"
-        tools:src="@drawable/download" />
+        tools:src="@drawable/aplhabet" />
 
     <ImageView
         android:id="@+id/dig"
@@ -87,7 +97,7 @@
         android:layout_marginTop="40dp"
         android:hint="Generate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/special" />
+        app:layout_constraintTop_toBottomOf="@+id/Site" />
 
     <TextView
         android:id="@+id/result"
